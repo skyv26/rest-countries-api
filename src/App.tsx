@@ -1,9 +1,9 @@
 import { Layout } from 'antd';
 import './App.css';
 import HeaderContent from './components/HeaderContent/HeaderContent';
+import FilterContainer from './components/FilterContainer/FilterContainer';
 
 const { Header, Footer, Content } = Layout;
-
 
 const App = () => {
   
@@ -13,7 +13,7 @@ const App = () => {
         <HeaderContent />
       </Header>
         <Content>
-
+            <FilterContainer />
         </Content>
       <Footer></Footer>
     </>
