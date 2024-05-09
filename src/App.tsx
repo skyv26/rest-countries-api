@@ -2,6 +2,8 @@ import { Card, Layout } from "antd";
 import "./App.css";
 import FilterContainer from "./components/FilterContainer/FilterContainer";
 import HeaderContent from "./components/HeaderContent/HeaderContent";
+import { Route, Routes } from "react-router";
+import Detail from "./pages/Detail";
 
 const { Header, Footer, Content } = Layout;
 const { Meta } = Card;
@@ -14,7 +16,8 @@ const App = () => {
       </Header>
       <Content>
         <FilterContainer />
-        <Card
+        <Routes>
+          <Route path="/" element={<Card
           hoverable
           style={{ width: 240 }}
           cover={
@@ -25,7 +28,12 @@ const App = () => {
           }
         >
           <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>
+        </Card>} />
+        <Route path="/:country" element={
+          <Detail />
+        } />
+        </Routes>
+        
       </Content>
       <Footer></Footer>
     </>
