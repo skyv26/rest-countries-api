@@ -14,7 +14,7 @@ const App = () => {
       <Header className="bg-transparent !py-0 p-2 !m-0">
         <HeaderContent />
       </Header>
-      <Content>
+      <Content className="bg-bglight_very_light_gray">
         <FilterContainer />
         <Routes>
           <Route path="/" element={<Card
