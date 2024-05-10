@@ -4,15 +4,13 @@ import App from "./App.tsx";
 import { CountryProvider } from "./context/CountryContext.tsx";
 import "./index.css";
 
-import { BrowserRouter, Routes } from "react-router";
+import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <CountryProvider>
       <BrowserRouter>
-        <Routes>
           <App />
-        </Routes>
       </BrowserRouter>
     </CountryProvider>
   </StrictMode>
