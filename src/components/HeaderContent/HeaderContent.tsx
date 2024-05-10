@@ -11,13 +11,13 @@ const HeaderContent = () => {
     <>
       <Row justify="space-between" align="middle">
         <Col>
-          <Title className="heading-style !text-base" level={1}>
+          <Title className="heading-style font-extrabold !text-text_light_very_dark_blue !text-base" level={1}>
             Where in the world?
           </Title>
         </Col>
         <Col>
           <Button
-            className="text-xs"
+            className="text-xs !text-text_light_very_dark_blue border-none font-semibold"
             size="small"
             onClick={() => {
               if (document.startViewTransition) {
@@ -28,7 +28,7 @@ const HeaderContent = () => {
                 setIsLightMode(!isLightMode);
               }
             }}
-            icon={isLightMode ? <MoonFilled /> : <MoonOutlined />}
+            icon={isLightMode ? <MoonFilled className="!text-text_light_very_dark_blue" /> : <MoonOutlined className="!text-text_light_very_dark_blue" />}
           >
             {isLightMode ? "Light" : "Dark"} Mode
           </Button>
