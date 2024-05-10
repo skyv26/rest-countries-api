@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before {
+  @apply font-nunito;
+}
+
 .heading-style {
   @apply !m-0;
 }
