@@ -1,18 +1,21 @@
-import { Col, Row } from "antd"
-import Search from "../Search/Search"
-import RegionFilter from "../RegionFilter/RegionFilter"
+import { Col, Row } from "antd";
+import RegionFilter from "../RegionFilter/RegionFilter";
+import Search from "../Search/Search";
 
 const FilterContainer = () => {
   return (
-    <Row>
-        <Col>
-         <Search />
-        </Col>
-        <Col>
-            <RegionFilter />
-        </Col>
+    <div className="!w-full">
+
+    <Row justify="start">
+      <Col>
+        <Search />
+      </Col>
+      <Col>
+        <RegionFilter />
+      </Col>
     </Row>
-  )
-}
+    </div>
+  );
+};
 
 export default FilterContainer;
