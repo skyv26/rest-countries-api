@@ -11,10 +11,10 @@ const { Meta } = Card;
 const App = () => {
   return (
     <>
-      <Header className="bg-transparent !py-0 p-2 !m-0">
+      <Header className="!py-0 p-2 !m-0 !bg-white shadow-sm">
         <HeaderContent />
       </Header>
-      <Content className="bg-bglight_very_light_gray">
+      <Content className="bg-bglight_very_light_gray !p-2 !py-6">
         <FilterContainer />
         <Routes>
           <Route path="/" element={<Card
