@@ -1,4 +1,4 @@
-import { Card, Layout } from "antd";
+import { Card, Col, Layout, Row } from "antd";
 import "./App.css";
 import FilterContainer from "./components/FilterContainer/FilterContainer";
 import HeaderContent from "./components/HeaderContent/HeaderContent";
@@ -14,26 +14,34 @@ const App = () => {
       <Header className="!py-0 p-2 !m-0 !bg-white shadow-sm">
         <HeaderContent />
       </Header>
-      <Content className="bg-bglight_very_light_gray !p-2 !py-6">
-        <FilterContainer />
-        <Routes>
-          <Route path="/" element={<Card
-          hoverable
-          style={{ width: 240 }}
-          cover={
-            <img
-              alt="example"
-              src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-            />
-          }
-        >
-          <Meta title="Europe Street beat" description="www.instagram.com" />
-        </Card>} />
-        <Route path="/:country" element={
-          <Detail />
-        } />
-        </Routes>
-        
+      <Content className="content bg-[#bbb8b8] !p-2 !py-6">
+        <Row gutter={[16, 16]}>
+          <Col span={24}>
+            <FilterContainer />
+          </Col>
+          <Col span={24}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Card
+                  className="!rounded-[5px]"
+                    cover={
+                      <img
+                        alt="example"
+                        className="w-[264px] h-[160px] object-fill object-top"
+                        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+                      />
+                    }
+                  >
+                    {/* Additional Card Content */}
+                  </Card>
+                }
+              />
+              <Route path="/:country" element={<Detail />} />
+            </Routes>
+          </Col>
+        </Row>
       </Content>
       <Footer></Footer>
     </>
