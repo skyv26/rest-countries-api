@@ -33,7 +33,7 @@ const RegionFilter = () => {
 
   return (
     <Dropdown
-      className="!bg-white !text-text_light_very_dark_blue !py-4 !px-5"
+      className="!bg-white !text-text_light_very_dark_blue !py-[18px] !px-5"
       menu={{
         items,
         className: "text-text_light_very_dark_blue",
