@@ -9,7 +9,7 @@ const HeaderContent = () => {
 
   return (
     <>
-      <Row justify="space-between" align="middle">
+      <Row justify="space-between" align="middle" className="!py-[10px] !px-4">
         <Col>
           <Title className="heading-style font-extrabold !text-text_light_very_dark_blue !text-base" level={1}>
             Where in the world?
@@ -17,7 +17,7 @@ const HeaderContent = () => {
         </Col>
         <Col>
           <Button
-            className="text-xs !text-text_light_very_dark_blue border-none font-semibold"
+            className="text-xs !p-0 !m-0 !text-text_light_very_dark_blue border-none font-semibold"
             size="small"
             onClick={() => {
               if (document.startViewTransition) {
