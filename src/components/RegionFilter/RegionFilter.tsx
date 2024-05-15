@@ -3,21 +3,6 @@ import type { MenuProps } from "antd";
 import { Dropdown, Space, Typography } from "antd";
 import { useCountryContext } from "../../context/CountryContext";
 
-// const items: MenuProps["items"] = [
-//   {
-//     key: "1",
-//     label: "Item 1",
-//   },
-//   {
-//     key: "2",
-//     label: "Item 2",
-//   },
-//   {
-//     key: "3",
-//     label: "Item 3",
-//   },
-// ];
-
 const RegionFilter = () => {
   const { countries, loading, error } = useCountryContext();
 
@@ -26,10 +11,16 @@ const RegionFilter = () => {
 
   const uniqueRegions = [...new Set(countries.map((country) => country.region))].sort((a, b) => a.localeCompare(b));
 
-  const items: MenuProps["items"] = uniqueRegions.map((each_region) => ({
-    key: each_region.toLowerCase(),
-    label: each_region
-  }))
+  const items: MenuProps["items"] = [
+    {
+      key: 'default',
+      label: 'Default'
+    },
+    ...uniqueRegions.map((each_region) => ({
+      key: each_region.toLowerCase(),
+      label: each_region
+    }))
+  ] 
 
   return (
     <Dropdown
