@@ -1,12 +1,12 @@
-import { Card, Col, Layout, Row } from "antd";
+import { Col, Layout, Row } from "antd";
 import { Route, Routes } from "react-router";
 import "./App.css";
 import FilterContainer from "./components/FilterContainer/FilterContainer";
 import HeaderContent from "./components/HeaderContent/HeaderContent";
 import Detail from "./pages/Detail";
+import FlagContainer from "./components/FlagContainer/FlagContainer";
 
 const { Header, Footer, Content } = Layout;
-const { Meta } = Card;
 
 const App = () => {
   return (
@@ -21,29 +21,7 @@ const App = () => {
           </Col>
           <Col span={24}>
             <Routes>
-              <Route
-                path="/"
-                element={
-                  <Card
-                  className="!rounded-[5px] max-w-[264px]"
-                    cover={
-                      <img
-                        alt="example"
-                        className="w-full h-[160px] object-fill object-top rounded-none"
-                        src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
-                      />
-                    }
-                  >
-                    <Meta title="Germany" description={
-                      <ul>
-                        <li>Population: <span>81770900</span></li>
-                        <li>Region: <span>Europe</span></li>
-                        <li>Capital: <span>Berlin</span></li>
-                      </ul>
-                    } />
-                  </Card>
-                }
-              />
+              <Route path="/" element={<FlagContainer />} />
               <Route path="/:country" element={<Detail />} />
             </Routes>
           </Col>
