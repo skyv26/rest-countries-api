@@ -2,19 +2,13 @@ import { Col, Layout, Row } from "antd";
 import { Route, Routes } from "react-router";
 import "./App.css";
 import FilterContainer from "./components/FilterContainer/FilterContainer";
+import FlagContainer from "./components/FlagContainer/FlagContainer";
 import HeaderContent from "./components/HeaderContent/HeaderContent";
 import Detail from "./pages/Detail";
-import FlagContainer from "./components/FlagContainer/FlagContainer";
-import { useCountryContext } from "./context/CountryContext";
 
 const { Header, Footer, Content } = Layout;
 
 const App = () => {
-  const { countries, loading, error } = useCountryContext();
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-
   return (
     <>
       <Header className="!p-0 h-auto !m-0 !bg-white shadow-sm">
@@ -27,7 +21,7 @@ const App = () => {
           </Col>
           <Col span={24}>
             <Routes>
-              <Route path="/" element={<FlagContainer countries={countries} />} />
+              <Route path="/" element={<FlagContainer />} />
               <Route path="/:country" element={<Detail />} />
             </Routes>
           </Col>
