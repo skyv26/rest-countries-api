@@ -5,23 +5,23 @@ const { Meta } = Card;
 const FlagCard = ({ country }: { country: Country }) => {
   return (
     <Card
-      className="!rounded-[5px] w-52 max-w-[264px] overflow-hidden border-none"
+      className="!rounded-[5px] max-w-[265px] overflow-hidden border-none shadow-sm"
       // className="w-full h-[160px] rounded-none"
 
       cover={
         <>
-          <div
+          {/* <div
             className="w-full h-[160px] rounded-none bg-no-repeat bg-center"
             style={{ backgroundImage: `url(${country.flag})`, backgroundSize: "auto 100%", backgroundPosition: "center" }}
             
-          />
-          {/* <div className="w-full h-[160px]">
+          /> */}
+          <div>
             <Image
               alt={country.altSpellings.join(",")}
               src={country.flag}
-              className="!h-[160px] !inline-block"
+              className="max-w-[265px] !h-[160px] !object-cover"
             />
-          </div> */}
+          </div>
         </>
       }
     >
