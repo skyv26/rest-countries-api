@@ -17,9 +17,9 @@ const FlagCard = ({ country }: { country: Country }) => {
           /> */}
           <div>
             <Image
-              alt={country.altSpellings.join(",")}
+              alt={country.name}
               src={country.flag}
-              className="max-w-[265px] !h-[160px] !object-cover"
+              className="min-w-[265px] !h-[160px] !object-cover"
             />
           </div>
         </>
