@@ -36,20 +36,49 @@ export const CountryProvider: React.FC<{ children: ReactNode }> = ({ children })
   // Effect to filter countries based on search term and region filter
   useEffect(() => {
     let filtered = countries;
-
+  
+    // Apply search term filter if provided
     if (searchTerm) {
-      filtered = filtered.filter((country) =>
-        country.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      filtered = filtered.filter((country) => {
+        const lowercasedSearchTerm = searchTerm.toLowerCase();
+  
+        return (
+          country.name?.toLowerCase().includes(lowercasedSearchTerm) ||
+          country.region?.toLowerCase().includes(lowercasedSearchTerm) ||
+          country.population?.toString().toLowerCase().includes(lowercasedSearchTerm) ||
+          country.capital?.toLowerCase().includes(lowercasedSearchTerm) ||
+          country.nativeName?.toLowerCase().includes(lowercasedSearchTerm) ||
+          country.numericCode?.toString().toLowerCase().includes(lowercasedSearchTerm) ||
+          country.subregion?.toLowerCase().includes(lowercasedSearchTerm) ||
+          country.callingCodes?.toString().toLowerCase().includes(lowercasedSearchTerm)
+        );
+      });
     }
-
-    if (regionFilter) {
+  
+    // If region filter is provided and is not "Default", apply region filter
+    if (regionFilter && regionFilter !== "Default") {
       filtered = filtered.filter((country) => country.region === regionFilter);
     }
-
+  
+    // If "Default" is selected, prioritize India
+    if (regionFilter === "Default") {
+      filtered = filtered.sort((a, b) => {
+        const countryA = a.name?.toLowerCase();
+        const countryB = b.name?.toLowerCase();
+  
+        // Check if India is in the list and prioritize it
+        if (countryA === "india") return -1; // Move India to the top
+        if (countryB === "india") return 1;  // Ensure India appears first
+        return 0; // Otherwise, keep the order unchanged
+      });
+    }
+  
+    // Update filtered countries
     setFilteredCountries(filtered);
+  
+    console.log(filtered);  // Log the filtered list
   }, [countries, searchTerm, regionFilter]);
-
+  
   return (
     <CountryContext.Provider
       value={{
@@ -69,6 +98,7 @@ export const CountryProvider: React.FC<{ children: ReactNode }> = ({ children })
 };
 
 // Custom hook for using the context
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCountryContext = () => {
   const context = useContext(CountryContext);
   if (!context) {
