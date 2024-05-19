@@ -9,15 +9,6 @@ const FlagContainer = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-//   const defaultCountriesAsPerDesign =
-//     "india,united states of america,pakistan,Russian Federation,United Kingdom of Great Britain and Northern Ireland,japan,Sierra Leone";
-
-//   const predefinedCountries = countries.filter((country: Country) =>
-//     countries
-//       .toLowerCase()
-//       .includes(country.name.toLowerCase())
-//   );
-
   return (
     <Row className="w-full py-8 gap-10" justify="center">
       {filteredCountries.map((each: Country) => (
