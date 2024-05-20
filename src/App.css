@@ -7,3 +7,83 @@
 .heading-style {
   @apply !m-0;
 }
+
+
+/* Define custom transition effects for view changes */
+:root {
+  --fade-duration: 0.4s;
+  --fade-delay: 0.1s; /* Adjust the delay for the home page */
+}
+
+::view-transition-group(root) {
+  animation: fade-out var(--fade-duration) ease-in-out;
+}
+
+::view-transition-group(new) {
+  animation: fade-in var(--fade-duration) ease-in-out;
+  animation-delay: var(--fade-delay); /* Add delay for the home page */
+}
+
+/* Keyframes for fade-in and fade-out effects */
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.detail-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.detail-container.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.detail-container.fade-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Default state for the flag card */
+.flag-card {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Fade-out effect */
+.flag-card.fade-out {
+  opacity: 0;
+  transform: scale(0.9); /* Slight zoom-out effect for better visual cue */
+}
+
+/* Country list transition */
+.country-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  gap: 16px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.country-list::view-transition-group(root) {
+  animation: fade-out 0.3s ease-in-out;
+}
+
+.country-list::view-transition-group(new) {
+  animation: fade-in 0.3s ease-in-out;
+}
