@@ -17,11 +17,16 @@ const App = () => {
       <Content className="content bg-bglight_very_light_gray !p-2 !py-6">
         <Row gutter={[16, 16]}>
           <Col span={24}>
-            <FilterContainer />
-          </Col>
-          <Col span={24}>
             <Routes>
-              <Route path="/" element={<FlagContainer />} />
+              <Route
+                path="/"
+                element={
+                  <>
+                    <FilterContainer />
+                    <FlagContainer />
+                  </>
+                }
+              />
               <Route path="/:country" element={<Detail />} />
             </Routes>
           </Col>
