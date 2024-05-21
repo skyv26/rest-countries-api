@@ -11,7 +11,7 @@ const { Header, Footer, Content } = Layout;
 const App = () => {
   return (
     <>
-      <Header className="!p-0 h-auto !m-0 !bg-white shadow-sm">
+      <Header className="!p-0 h-auto !m-0 !bg-white !shadow-md">
         <HeaderContent />
       </Header>
       <Content className="content bg-bglight_very_light_gray !p-2 !py-6">
