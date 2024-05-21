@@ -6,8 +6,6 @@ import { useCountryContext } from "../../context/CountryContext";
 const RegionFilter = () => {
   const { countries, loading, error, setRegionFilter } = useCountryContext();
 
-  setRegionFilter("Default");
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
