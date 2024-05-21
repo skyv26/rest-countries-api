@@ -6,7 +6,7 @@ const FilterContainer = () => {
   
   return (
     <div className="w-full">
-      <Row className="flex flex-col gap-10 items-start">
+      <Row className="flex flex-col gap-10 items-start md:flex-row md:px-14 md:justify-between">
         <Col>
           <Search />
         </Col>
