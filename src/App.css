@@ -8,7 +8,6 @@
   @apply !m-0;
 }
 
-
 /* Define custom transition effects for view changes */
 :root {
   --fade-duration: 0.4s;
