@@ -11,7 +11,7 @@ export const CountryProvider: React.FC<{ children: ReactNode }> = ({ children })
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [regionFilter, setRegionFilter] = useState<string>("");
+  const [regionFilter, setRegionFilter] = useState<string>("Default");
 
   useEffect(() => {
     const fetchCountries = async () => {
