@@ -9,9 +9,9 @@ const HeaderContent = () => {
 
   return (
     <>
-      <Row justify="space-between" align="middle" className="!py-[10px] !px-4">
+      <Row justify="space-between" align="middle" className="!py-[10px] !px-4 min-[375px]:!py-[8px]">
         <Col>
-          <Title className="heading-style font-extrabold !text-text_light_very_dark_blue !text-base" level={1}>
+          <Title className="heading-style font-extrabold !text-text_light_very_dark_blue !text-[13.5px]" level={1}>
             Where in the world?
           </Title>
         </Col>
@@ -28,7 +28,7 @@ const HeaderContent = () => {
                 setIsLightMode(!isLightMode);
               }
             }}
-            icon={isLightMode ? <MoonFilled className="!text-text_light_very_dark_blue" /> : <MoonOutlined className="!text-text_light_very_dark_blue" />}
+            icon={isLightMode ? <MoonFilled className="!text-text_light_very_dark_blue !text-sm" /> : <MoonOutlined className="!text-text_light_very_dark_blue !text-sm" />}
           >
             {isLightMode ? "Light" : "Dark"} Mode
           </Button>
