@@ -14,7 +14,7 @@ const App = () => {
       <Header className="!p-0 h-auto !m-0 !bg-white !shadow-md">
         <HeaderContent />
       </Header>
-      <Content className="content bg-gray-400  !p-2 !py-6 min-[375px]:!p-4">
+      <Content className="content bg-bglight_very_light_gray  !p-2 !py-6 min-[375px]:!p-4">
         <Row gutter={[16, 16]}>
           <Col span={24}>
             <Routes>

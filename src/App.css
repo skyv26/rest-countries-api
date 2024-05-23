@@ -86,3 +86,7 @@
 .country-list::view-transition-group(new) {
   animation: fade-in 0.3s ease-in-out;
 }
+
+.card-custom .ant-card-body {
+  @apply pt-5 pb-10;
+}
