@@ -3,14 +3,13 @@ import RegionFilter from "../RegionFilter/RegionFilter";
 import Search from "../Search/Search";
 
 const FilterContainer = () => {
-  
   return (
     <div className="w-full">
-      <Row className="flex flex-col gap-10 items-start md:flex-row md:px-14 md:justify-between">
-        <Col>
+      <Row gutter={[36, 36]} className="md:px-14">
+        <Col span={24}>
           <Search />
         </Col>
-        <Col>
+        <Col span={15}>
           <RegionFilter />
         </Col>
       </Row>
