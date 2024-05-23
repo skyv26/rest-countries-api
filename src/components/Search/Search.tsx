@@ -35,12 +35,12 @@ const Search = memo(() => {
   );
 
   return (
-    <div className="bg-white shadow-sm">
+    <div className="bg-white shadow-sm rounded-[5px] overflow-hidden">
       <Input
         onInput={handleInput}
-        className="bg-transparent !py-3 !px-5 border-none flex gap-2 !text-base placeholder:!font-nunito !text-input_light_dark_gray"
+        className="bg-transparent !py-4 !px-5 border-none flex gap-2 !text-xs placeholder:!font-nunito !text-input_light_dark_gray !w-full"
         placeholder="Search for a country..."
-        prefix={<SearchOutlined className="text-input_light_dark_gray" />}
+        prefix={<SearchOutlined className="text-input_light_dark_gray mr-4 text-base" />}
       />
     </div>
   );
