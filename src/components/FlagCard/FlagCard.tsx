@@ -29,7 +29,7 @@ const FlagCard = ({ country }: { country: Country }) => {
       style={{ cursor: "pointer" }}
     >
       <Card
-        className="card-custom !rounded-[5px] max-w-[255px] overflow-hidden border-none shadow-sm"
+        className="card-custom !rounded-[5px] max-w-[255px] overflow-hidden border-none shadow-sm dark:bg-element_dark_blue"
         cover={
           <>
             <div>
@@ -44,18 +44,18 @@ const FlagCard = ({ country }: { country: Country }) => {
         }
       >
         <Meta
-          title={<span className="text-lg font-bold">{country.name}</span>}
+          title={<span className="text-lg font-bold dark:text-white">{country.name}</span>}
           className="!p-0"
           description={
-            <ul className="!mt-3 flex flex-col gap-1">
-              <li className="max-w-[200px] !text-sm font-semibold truncate">
-                Population: <span className="font-normal">{country.population}</span>
+            <ul className="!mt-3 flex flex-col text-text_light_very_dark_blue gap-1 dark:text-white">
+              <li className="max-w-[200px] !text-sm !font-semibold truncate">
+                Population: <span className="!font-normal">{country.population}</span>
               </li>
-              <li className="max-w-[200px] !text-sm font-semibold truncate">
-                Region: <span className="font-normal">{country.region}</span>
+              <li className="max-w-[200px] !text-sm !font-semibold truncate">
+                Region: <span className="!font-normal">{country.region}</span>
               </li>
-              <li className="max-w-[200px] !text-sm font-semibold truncate">
-                Capital: <span className="font-normal">{country.capital}</span>
+              <li className="max-w-[200px] !text-sm !font-semibold truncate">
+                Capital: <span className="!font-normal">{country.capital}</span>
               </li>
             </ul>
           }
