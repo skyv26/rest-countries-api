@@ -7,14 +7,13 @@ import HeaderContent from "./components/HeaderContent/HeaderContent";
 import Detail from "./pages/Detail";
 
 const { Header, Footer, Content } = Layout;
-// bglight_very_light_gray
 const App = () => {
   return (
     <>
-      <Header className="!p-0 h-auto !m-0 !bg-white !shadow-md">
+      <Header className="!p-0 h-auto !m-0 !bg-transparent !shadow-md dark:!bg-element_dark_blue">
         <HeaderContent />
       </Header>
-      <Content className="content bg-bglight_very_light_gray  !p-2 !py-6 min-[375px]:!p-4">
+      <Content className="content bg-bglight_very_light_gray dark:bg-bgdark_very_dark_blue !p-2 !py-6 min-[375px]:!p-4">
         <Row gutter={[16, 16]}>
           <Col span={24}>
             <Routes>
