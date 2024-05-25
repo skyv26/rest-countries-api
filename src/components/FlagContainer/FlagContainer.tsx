@@ -10,7 +10,7 @@ const FlagContainer = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <Row className="w-full py-8 gap-10" justify="center">
+    <Row className="w-full py-8 gap-10 xl:gap-[75px]" justify="center">
       {filteredCountries.map((each: Country) => (
         <Col key={each.name}>
           <FlagCard country={each} />
