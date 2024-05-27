@@ -38,9 +38,9 @@ const Search = memo(() => {
     <div className="bg-white dark:bg-element_dark_blue shadow-sm rounded-[5px] overflow-hidden dark:text-white">
       <Input
         onInput={handleInput}
-        className="bg-transparent !py-4 !px-5 border-none flex gap-2 !text-xs placeholder:!font-nunito !text-input_light_dark_gray !w-full dark:bg-element_dark_blue dark:hover:!bg-transparent placeholder:dark:text-white"
+        className="bg-transparent !py-4 !px-5 border-none flex gap-2 !text-xs placeholder:!font-nunito !text-input_light_dark_gray !w-full md:!text-sm dark:bg-element_dark_blue dark:hover:!bg-transparent placeholder:dark:text-white"
         placeholder="Search for a country..."
-        prefix={<SearchOutlined className="text-input_light_dark_gray mr-4 text-base dark:!text-white" />}
+        prefix={<SearchOutlined className="text-input_light_dark_gray mr-4 text-base md:text-lg  dark:!text-white " />}
       />
     </div>
   );
