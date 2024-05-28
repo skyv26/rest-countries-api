@@ -5,7 +5,7 @@ import Search from "../Search/Search";
 const FilterContainer = () => {
   return (
     <div className="w-full">
-      <Row justify="space-between" className="gap-9 md:px-14">
+      <Row justify="space-between" className="gap-9 md:px-5 xl:px-14">
         <Col xs={24} md={12}>
           <Search />
         </Col>
