@@ -5,11 +5,14 @@ import Search from "../Search/Search";
 const FilterContainer = () => {
   return (
     <div className="w-full">
-      <Row justify="space-between" className="gap-9 md:px-5 xl:px-14">
-        <Col xs={24} md={12}>
+      <Row
+        justify="space-between"
+        className="gap-9 md:px-7 lg:px-[74px] min-[1366px]:px-16 xl:px-14"
+      >
+        <Col className="w-full md:w-5/12 xl:max-w-[480px]">
           <Search />
         </Col>
-        <Col xs={15} md={7}>
+        <Col className="min-w-[200px]">
           <RegionFilter />
         </Col>
       </Row>
