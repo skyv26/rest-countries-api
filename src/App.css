@@ -88,5 +88,5 @@
 } */
 
 .card-custom .ant-card-body {
-  @apply pt-5 pb-10;
+  @apply pt-5 pb-10 xl:pt-6 xl:pb-12 xl:px-6;
 }

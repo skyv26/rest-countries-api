@@ -13,7 +13,7 @@ const App = () => {
       <Header className="!p-0 h-auto !m-0 !bg-white relative shadow-md dark:!bg-element_dark_blue" >
         <HeaderContent />
       </Header>
-      <Content className="content bg-bglight_very_light_gray dark:bg-bgdark_very_dark_blue !p-2 !py-6 min-[375px]:!p-4">
+      <Content className="content bg-bglight_very_light_gray dark:bg-bgdark_very_dark_blue !p-2 !py-6 min-[375px]:!p-4 lg:!py-12">
         <Row gutter={[16, 16]}>
           <Col xs={24}>
             <Routes>
