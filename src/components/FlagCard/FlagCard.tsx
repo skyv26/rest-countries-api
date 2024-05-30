@@ -29,7 +29,7 @@ const FlagCard = ({ country }: { country: Country }) => {
       style={{ cursor: "pointer" }}
     >
       <Card
-        className="card-custom !rounded-[5px] max-w-[255px] md:!max-w-[200px] lg:!max-w-[255px] overflow-hidden border-none shadow-sm dark:bg-element_dark_blue"
+        className="card-custom !rounded-[5px] max-w-[255px] md:!max-w-[200px] lg:!max-w-[255px] xl:!max-w-[260px] overflow-hidden border-none shadow-sm dark:bg-element_dark_blue"
         cover={
           <>
             <div>
@@ -37,7 +37,7 @@ const FlagCard = ({ country }: { country: Country }) => {
                 alt={country.name}
                 src={country.flag}
                 preview={false}
-                className="min-w-[255px] !h-[155px] !object-cover md:min-w-[200px] lg:!min-w-[255px]"
+                className="min-w-[255px] !h-[155px] !object-cover md:min-w-[200px] lg:!min-w-[255px] xl:!min-w-[260px]"
               />
             </div>
           </>
