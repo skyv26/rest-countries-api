@@ -4,11 +4,11 @@
 
 @layer base {
     body {
-      @apply bg-bglight_very_light_gray relative z-0 w-full min-h-full;
+      @apply bg-bglight_very_light_gray relative z-0 w-full min-h-full dark:bg-bgdark_very_dark_blue;
     }
   
     body::after {
       content: '';
-      @apply absolute top-0 left-0 size-full bg-m-design bg-no-repeat bg-[100%,100%] z-30 opacity-40 invert;
+      /* @apply absolute top-0 left-0 size-full bg-m-design bg-no-repeat bg-[100%,100%] z-30 opacity-60 invert; */
     }
   }
