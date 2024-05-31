@@ -9,6 +9,6 @@
   
     body::after {
       content: '';
-      @apply absolute top-0 left-0 size-full bg-m-design bg-no-repeat bg-[100%,100%] z-30 opacity-60 invert;
+      /* @apply absolute top-0 left-0 size-full bg-m-design bg-no-repeat bg-[100%,100%] z-30 opacity-60 invert; */
     }
   }
