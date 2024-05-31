@@ -90,3 +90,15 @@
 .card-custom .ant-card-body {
   @apply pt-5 pb-10 xl:pt-6 xl:pb-12 xl:px-6;
 }
+
+.ant-dropdown-menu-item ~ .ant-dropdown-menu-item-selected {
+  @apply dark:!bg-bgdark_very_dark_blue;
+}
+
+.ant-dropdown-menu-item > .ant-dropdown-menu-title-content {
+  @apply dark:!text-white;
+}
+
+.ant-input::placeholder {
+  @apply dark:text-white;
+}
