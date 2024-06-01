@@ -49,7 +49,7 @@ const FlagCard = ({ country }: { country: Country }) => {
           description={
             <ul className="!mt-3 flex flex-col text-text_light_very_dark_blue gap-1 dark:text-white">
               <li className="max-w-[200px] !text-sm !font-semibold truncate">
-                Population: <span className="!font-normal">{country.population}</span>
+                Population: <span className="!font-normal">{country.population.toLocaleString()}</span>
               </li>
               <li className="max-w-[200px] !text-sm !font-semibold truncate">
                 Region: <span className="!font-normal">{country.region}</span>
