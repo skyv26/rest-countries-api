@@ -18,7 +18,7 @@ const App = () => {
           <Col xs={24}>
             <Routes>
               <Route
-                path="/countries"
+                path={location.pathname}
                 element={
                   <>
                     <FilterContainer />
@@ -26,14 +26,14 @@ const App = () => {
                   </>
                 }
               />
-              <Route path="/" element={<Navigate replace to="/rockets" />} />
               <Route path="/detail" element={<Detail />} />
+              <Route path="/" element={<Navigate replace to={location.pathname} />} />
             </Routes>
           </Col>
         </Row>
       </Content>
       <Footer className="bg-transparent text-center text-element_dark_blue dark:text-white">
-        Made with ❤️ by{" "}
+        Made with ❤️ by
         <Button
           href="https://linkedin.com/in/skyv2022"
           className="px-0 text-element_dark_blue dark:text-blue-200"
