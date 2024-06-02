@@ -1,4 +1,4 @@
-import { Col, Layout, Row } from "antd";
+import { Button, Col, Layout, Row } from "antd";
 import { Route, Routes } from "react-router";
 import "./App.css";
 import FilterContainer from "./components/FilterContainer/FilterContainer";
@@ -31,7 +31,7 @@ const App = () => {
           </Col>
         </Row>
       </Content>
-      <Footer className="bg-transparent"></Footer>
+      <Footer className="bg-transparent text-center text-element_dark_blue dark:text-white">Made with ❤️ by <Button href="https://linkedin.com/in/skyv2022" className="px-0 text-element_dark_blue dark:text-blue-200" type="link">Aakash Verma</Button></Footer>
     </>
   );
 };
