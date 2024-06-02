@@ -31,7 +31,7 @@ const App = () => {
           </Col>
         </Row>
       </Content>
-      <Footer></Footer>
+      <Footer className="bg-transparent"></Footer>
     </>
   );
 };
