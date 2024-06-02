@@ -14,17 +14,17 @@
   --fade-delay: 0.1s; /* Adjust the delay for the home page */
 }
 
-/* ::view-transition-group(root) {
+::view-transition-group(root) {
   animation: fade-out var(--fade-duration) ease-in-out;
 }
 
 ::view-transition-group(new) {
   animation: fade-in var(--fade-duration) ease-in-out;
-  animation-delay: var(--fade-delay); /* Add delay for the home page 
-} */
+  animation-delay: var(--fade-delay); 
+}
 
 /* Keyframes for fade-in and fade-out effects */
-/* @keyframes fade-out {
+@keyframes fade-out {
   from {
     opacity: 1;
   }
@@ -56,23 +56,23 @@
 .detail-container.fade-hidden {
   opacity: 0;
   transform: translateY(20px);
-} */
+}
 
 /* Default state for the flag card */
-/* .flag-card {
+.flag-card {
   opacity: 1;
   transform: scale(1);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-} */
+} 
 
 /* Fade-out effect */
-/* .flag-card.fade-out {
+.flag-card.fade-out {
   opacity: 0;
-  transform: scale(0.9); /* Slight zoom-out effect for better visual cue 
-} */
+  transform: scale(0.9);
+}
 
 /* Country list transition */
-/* .country-list {
+.country-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
   gap: 16px;
@@ -80,12 +80,12 @@
 }
 
 .country-list::view-transition-group(root) {
-  animation: fade-out 0.3s ease-in-out; */
-/* } */
+  animation: fade-out 0.3s ease-in-out;
+}
 
-/* .country-list::view-transition-group(new) {
+country-list::view-transition-group(new) {
   animation: fade-in 0.3s ease-in-out;
-} */
+}
 
 .card-custom .ant-card-body {
   @apply pt-5 pb-10 xl:pt-6 xl:pb-12 xl:px-6;
