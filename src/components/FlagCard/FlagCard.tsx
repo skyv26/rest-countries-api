@@ -44,7 +44,7 @@ const FlagCard = ({ country }: { country: Country }) => {
         }
       >
         <Meta
-          title={<span className="text-lg font-bold dark:text-white">{country.name}</span>}
+          title={<span className="text-lg !font-extrabold dark:text-white">{country.name}</span>}
           className="!p-0"
           description={
             <ul className="!mt-3 flex flex-col text-text_light_very_dark_blue gap-1 dark:text-white">
