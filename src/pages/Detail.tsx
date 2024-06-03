@@ -48,8 +48,6 @@ const Detail: React.FC = () => {
     country.borders?.includes(eachCountry.alpha3Code)
   );
 
-  console.log(country.languages);
-
   return (
     <div
       className={`detail-container ${
