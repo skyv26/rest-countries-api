@@ -1,18 +1,23 @@
-import { Col, Row } from "antd"
-import Search from "../Search/Search"
-import RegionFilter from "../RegionFilter/RegionFilter"
+import { Col, Row } from "antd";
+import RegionFilter from "../RegionFilter/RegionFilter";
+import Search from "../Search/Search";
 
 const FilterContainer = () => {
   return (
-    <Row>
-        <Col>
-         <Search />
+    <div className="w-full">
+      <Row
+        justify="space-between"
+        className="gap-9 md:px-7 lg:px-[74px] min-[1366px]:px-16 xl:px-14"
+      >
+        <Col className="w-full md:w-5/12 xl:max-w-[480px]">
+          <Search />
         </Col>
-        <Col>
-            <RegionFilter />
+        <Col className="min-w-[200px]">
+          <RegionFilter />
         </Col>
-    </Row>
-  )
-}
+      </Row>
+    </div>
+  );
+};
 
 export default FilterContainer;

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class', // Enables class-based dark mode
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -12,6 +13,9 @@ export default {
         "text_light_very_dark_blue": "hsl(200, 15%, 8%)",
         "input_light_dark_gray": "hsl(0, 0%, 52%)",
         "bglight_very_light_gray": "hsl(0, 0%, 98%)",
+      },
+      backgroundImage: {
+        'm-design': "url('/src/assets/mobile-design-home-light.jpg')",
       },
       fontWeight: {
         "regular": 300,
