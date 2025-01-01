@@ -76,7 +76,6 @@ export const CountryProvider: React.FC<{ children: ReactNode }> = ({ children })
     // Update filtered countries
     setFilteredCountries(filtered);
   
-    console.log(filtered);  // Log the filtered list
   }, [countries, searchTerm, regionFilter]);
   
   return (

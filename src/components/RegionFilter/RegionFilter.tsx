@@ -41,16 +41,16 @@ const RegionFilter = () => {
 
   return (
     <Dropdown
-      className="!bg-white !text-text_light_very_dark_blue !py-[15px] !px-5 rounded-[5px] !shadow-sm md:!py-[18px]"
+      className="dropdown-menu !bg-white !text-text_light_very_dark_blue !py-[15px] !px-5 rounded-[5px] !shadow-sm md:!py-[18px] xl:!pl-7 xl:!text-sm"
       menu={{
         items,
-        className: "text-text_light_very_dark_blue",
+        className: "text-text_light_very_dark_blue dark:bg-element_dark_blue dark:!text-white",
         selectable: true,
         defaultSelectedKeys: ["default"], // Set the default selected key
         onClick: handleMenuClick,
       }}
     >
-      <Typography.Link className="flex justify-between text-xs items-center w-full">
+      <Typography.Link className="flex justify-between text-xs items-center w-full dark:!bg-element_dark_blue dark:!text-white">
         <span>Filter by Region</span>
         <DownOutlined className="!text-[8px] items-end" />
       </Typography.Link>

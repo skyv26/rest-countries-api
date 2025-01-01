@@ -8,6 +8,8 @@ const Detail: React.FC = () => {
   const location = useLocation();
   const { countries } = useCountryContext();
   const navigate = useNavigate();
+  const [, setIsExiting] = useState(false); // To control fade-out effect
+
   const [isContentVisible, setContentVisible] = useState(false); // For controlling fade-in
 
   // Extract the country query parameter
@@ -29,6 +31,19 @@ const Detail: React.FC = () => {
     return <div>Country not found.</div>;
   }
 
+  const handleNavigation = (countryName: string) => {
+    setIsExiting(true); // Trigger fade-out animation
+    setTimeout(() => {
+      if (document.startViewTransition) {
+        // Use ViewTransition API for a smooth transition
+        document.startViewTransition(() => navigate(`/detail?country=${countryName}`));
+      } else {
+        // Fallback navigation
+        navigate(`/detail?country=${countryName}`);
+      }
+    }, 300); // Match with fade-out duration
+  };
+
   const borderCountries = countries.filter((eachCountry) =>
     country.borders?.includes(eachCountry.alpha3Code)
   );
@@ -37,11 +52,11 @@ const Detail: React.FC = () => {
     <div
       className={`detail-container ${
         isContentVisible ? "fade-in" : "fade-hidden"
-      }`} // Dynamic classes for transition
+      } lg:px-10 min-[1366px]:px-20`} // Dynamic classes for transition
     >
       <Button
         icon={<ArrowLeftOutlined />}
-        className="max-w-max"
+        className="max-w-max mt-[20px] ml-[4px] !rounded-[2px] dark:text-white dark:bg-element_dark_blue border-none hover:!text-white hover:!bg-bgdark_very_dark_blue !shadow-lg shadow-bgdark_very_dark_blue"
         onClick={() => {
           if (document.startViewTransition) {
             document.startViewTransition(() => navigate("/"));
@@ -52,47 +67,72 @@ const Detail: React.FC = () => {
       >
         Back
       </Button>
-      <div className="flex justify-start items-center mt-4">
+      <div className="flex flex-col justify-start items-start mt-16 md:flex-row md:gap-20 md:justify-between">
         <div>
           {country.flag && (
             <Image
               alt={country.name}
               src={country.flag}
-              preview={false}
-              className="max-w-[560px] min-w-[320px] min-h-[229px] max-h-[400px] w-full !h-[160px] !object-cover"
+              className="max-w-[560px] min-w-[200px] w-full rounded-md !object-cover"
             />
           )}
         </div>
 
         {/* Country Details */}
-        <div className="ml-6">
-          <h1 className="text-xl font-bold">{country.name}</h1>
-          <p>
-            <strong>Region:</strong> {country.region}
-          </p>
-          <p>
-            <strong>Population:</strong> {country.population}
-          </p>
-          <p>
-            <strong>Capital:</strong> {country.capital}
-          </p>
-          <p>
-            <strong>Subregion:</strong> {country.subregion}
-          </p>
-          <p>
-            <strong>Native Name:</strong> {country.nativeName}
-          </p>
-          <p>
-            <strong>Calling Codes:</strong> {country.callingCodes.join(", ")}
-          </p>
+        <div className="mt-10 max-h-max md:mt-0 md:!my-auto max-w-[598px]">
+          <h1 className="text-xl mb-4 min-[375px]:text-[22px] font-bold dark:text-white md:text-[32px]">
+            {country.name}
+          </h1>
+          <div className="flex flex-col gap-5 dark:text-white md:flex-row md:gap-20 md:justify-between lg:mt-6">
+            <ul className="flex flex-col gap-2">
+              <li className="text-sm font-light">
+                <span className="font-semibold">Native Name: </span>
+                {country.nativeName}
+              </li>
+              <li className="text-sm font-light">
+                <span className="font-semibold">Population: </span>
+                {country.population.toLocaleString()}
+              </li>
+              <li className="text-sm font-light">
+                <span className="font-semibold">Region: </span>
+                {country.region}
+              </li>
+              <li className="text-sm font-light">
+                <span className="font-semibold">Sub Region: </span>
+                {country.subregion}
+              </li>
+              <li className="text-sm font-light">
+                <span className="font-semibold">Capital: </span>
+                {country.capital}
+              </li>
+            </ul>
+            <ul className="flex flex-col gap-2">
+              <li className="text-sm font-light">
+                <span className="font-semibold">Top Level Domain: </span>
+                {country.topLevelDomain}
+              </li>
+              <li className="text-sm font-light">
+                <span className="font-semibold">Currencies: </span>
+                {country.currencies[0]["name"]}
+              </li>
+              <li className="text-sm font-light">
+                <span className="font-semibold">Languages: </span>
+                {country.languages.map((each) => each.name).join(",")}
+              </li>
+            </ul>
+          </div>
 
           {/* Border Countries */}
           {borderCountries.length > 0 && (
-            <div className="flex gap-2 items-center justify-center mt-4">
-              <p>Border Countries:</p>
-              <ul className="flex gap-2">
+            <div className="flex flex-col md:flex-row gap-4 items-start justify-start mt-4 dark:text-white md:mt-6 lg:mt-16">
+              <p className="text-base font-semibold min-w-max">Border Countries:</p>
+              <ul className="flex gap-[10px] flex-wrap">
                 {borderCountries.map((borderCountry) => (
-                  <li key={borderCountry.alpha3Code} className="p-1 border">
+                  <li
+                   onClick={() => handleNavigation(borderCountry.name)}
+                    key={borderCountry.alpha3Code}
+                    className="p-1  dark:bg-element_dark_blue px-5 py-1 rounded-[2px] shadow-sm shadow-bgdark_very_dark_blue text-xs font-light"
+                  >
                     {borderCountry.name}
                   </li>
                 ))}
